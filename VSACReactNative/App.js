@@ -19,24 +19,23 @@ const instructions = Platform.select({
 
 export default class App extends Component<{}> {
     async componentWillMount() {
-      await Crashes.setEnabled(true);
-      await Analytics.setEnabled(true);
+        await Crashes.setEnabled(true);
+        await Analytics.setEnabled(true);
     }
 
     async componentDidMount() {
-
         await Analytics.trackEvent("AppEntered", {
             Event: "VSLive",
             Location: "Las Vegas"
         });
 
-        //Crashes.generateTestCrash();
+        Crashes.generateTestCrash();
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>Welcome to React Native!</Text>
+                <Text style={styles.welcome}>Welcome to React Native! Hey, this is an update!!!!</Text>
                 <Text style={styles.instructions}>
                     To get started, edit App.js
                 </Text>
